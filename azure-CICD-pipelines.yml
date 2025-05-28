@@ -1,0 +1,44 @@
+
+trigger:
+       - main
+
+ 
+stages:
+ - stage: Build
+   jobs:
+   - job: Build
+     pool: my-msi-leo96
+     steps: 
+     - task: Npm@1
+       inputs:
+        command: 'install'
+     - task: Npm@1
+       inputs:
+        command: 'custom'
+        customCommand: 'run build'
+     - task: PublishBuildArtifacts@1
+       inputs:
+            PathtoPublish: 'build'
+            ArtifactName: 'drop'
+            publishLocation: 'Container'
+
+ - stage: Deploy
+   jobs:
+   - job: Deploy
+     pool: my-msi-leo96
+     steps:
+     - task: DownloadBuildArtifacts@1
+       inputs:
+         buildType: 'current'
+         downloadType: 'single'
+         artifactName: 'drop'
+         downloadPath: '$(System.ArtifactsDirectory)'
+     - task: AzureRmWebAppDeployment@5
+       inputs:
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'Azure subscription 1 (15b521bb-a6cb-4b2c-9331-77228062a852)'
+          appType: 'webAppLinux'
+          WebAppName: 'AzureDevOps-Demo'
+          packageForLinux: '$(System.ArtifactsDirectory)/drop'
+          RuntimeStack: 'PHP|8.3'
+          DeploymentTypeLinux: 'oneDeploy'
