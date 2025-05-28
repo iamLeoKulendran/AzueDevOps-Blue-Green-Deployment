@@ -48,17 +48,17 @@ This project demonstrates a robust, cloud-native CI/CD pipeline using Azure DevO
 
 
 ### 1. Azure DevOps Build Pipeline
-![alt text](image-3.png)
+![alt text](Screenshots/image-3.png)
 ### 2. Azure DevOps Release Pipeline
-![alt text](image-2.png)
-![alt text](image-7.png)
-![alt text](image-1.png)
+![alt text](Screenshots/image-2.png)
+![alt text](Screenshots/image-7.png)
+![alt text](Screenshots/image-1.png)
 ### 3. Deployment Slots in Azure App Service
-![alt text](image.png)
-### 4. Othe Screenshots
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
+![alt text](Screenshots/image.png)
+### 4. Other Screenshots
+![alt text](Screenshots/image-4.png)
+![alt text](Screenshots/image-5.png)
+![alt text](Screenshots/image-6.png)
 ---
 
 ## 📝 How to Use
