@@ -1,4 +1,5 @@
 # CI/CD Pipeline with Blue-Green Deployment using Azure DevOps
+![alt text](Screenshots/azure-devops-blue-green.png)
 
 This project demonstrates a robust, cloud-native CI/CD pipeline using Azure DevOps, hosted on Azure App Service, and implements a blue-green deployment strategy for zero-downtime releases. The pipeline automates build, test, and deployment stages, ensuring high reliability, fast delivery, and safe rollbacks.
 
